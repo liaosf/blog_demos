@@ -23,6 +23,7 @@ public class Tools {
         System.out.print(listNode.val);
 
         if (null==listNode.next) {
+            System.out.println("");
             return;
         }
 
@@ -51,9 +52,47 @@ public class Tools {
             System.out.print(array[i]);
             if((array.length-1)!=i){
                 System.out.print(", ");
+            }else {
+                System.out.print("\n");
             }
         }
     }
+
+    public static void print(char[] array) {
+        for(int i=0;i<array.length;i++) {
+            System.out.print(array[i]);
+            if((array.length-1)!=i){
+                System.out.print(", ");
+            }
+        }
+    }
+
+    public static void print(int[][] array) {
+        for(int i=0;i<array.length;i++) {
+
+            for (int j=0;j<array.length;j++) {
+                System.out.print(array[i][j]);
+                if((array.length-1)!=j){
+                    System.out.print(", ");
+                } else {
+                    System.out.print("\n");
+                }
+            }
+        }
+    }
+
+
+    public static void print(String prefix, int[] array) {
+        System.out.print(prefix + " [");
+        for(int i=0;i<array.length;i++) {
+            System.out.print(array[i]);
+            if((array.length-1)!=i){
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]\n");
+    }
+
 
     public static void print(List<Integer> list) {
         for (Integer val : list) {
@@ -86,5 +125,24 @@ public class Tools {
             }
         }
         System.out.print("\n");
+    }
+
+    public static void print(TreeNode treeNode) {
+        if(null==treeNode) {
+            System.out.println("treeNode is null");
+            return;
+        }
+
+        System.out.print(treeNode.val);
+
+        System.out.print(", ");
+
+        if (null!=treeNode.left) {
+            print(treeNode.left);
+        }
+
+        if (null!=treeNode.right) {
+            print(treeNode.right);
+        }
     }
 }
